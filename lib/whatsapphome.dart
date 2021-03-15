@@ -4,7 +4,10 @@ import 'package:ui_clone_whatsapp/pages/chat_screen.dart';
 import 'package:ui_clone_whatsapp/pages/status_screen.dart';
 import 'package:ui_clone_whatsapp/pages/call_screen.dart';
 
+// ignore: must_be_immutable
 class WhatsappHome extends StatefulWidget {
+  var cameras;
+  WhatsappHome(this.cameras);
   @override
   _WhatsappHomeState createState() => _WhatsappHomeState();
 }
@@ -46,7 +49,7 @@ class _WhatsappHomeState extends State<WhatsappHome>
       body: new TabBarView(
         controller: _tabController,
         children: [
-          new CameraScreen(),
+          new CameraScreen(widget.cameras),
           new ChatScreen(),
           new StatusScreen(),
           new CallsScreen(),
